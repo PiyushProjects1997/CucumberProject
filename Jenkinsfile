@@ -28,22 +28,6 @@ pipeline {
                 bat 'mvn test'
             }
         }
-        
-        stage('Generate Reports') {
-            steps {
-                // Cucumber reports generate
-                cucumber buildStatus: 'UNSTABLE',
-                    reportTitle: 'Cucumber Report',
-                    fileIncludePattern: '**/cucumber.json',
-                    trendsLimit: 10,
-                    classifications: [
-                        [
-                            'key': 'Environment',
-                            'value': 'TEST'
-                        ]
-                    ]
-            }
-        }
     }
     
     post {
