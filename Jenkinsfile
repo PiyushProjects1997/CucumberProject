@@ -11,7 +11,7 @@ pipeline {
             steps {
                 // Git repository se code checkout
                 git branch: 'main', 
-                    url: 'http://localhost:8081/'
+                    url: 'https://github.com/PiyushProjects1997/CucumberProject.git'
             }
         }
         
