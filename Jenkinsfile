@@ -18,14 +18,14 @@ pipeline {
         stage('Build') {
             steps {
                 // Maven clean & compile
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
         
         stage('Test') {
             steps {
                 // Run Cucumber tests
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         
