@@ -1,0 +1,1 @@
+INFO    2025-02-12 12:58:25,083 [main] utilities.SeleniumDriver  - Chrome Browser has been Launched
