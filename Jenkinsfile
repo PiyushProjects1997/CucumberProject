@@ -39,7 +39,7 @@ pipeline {
                     Build Number - ${env.BUILD_NUMBER}
                     Build URL - ${env.BUILD_URL}
                 """,
-                to: 'aapka.gmail@gmail.com'
+                to: 'piyushsinha2895@gmail.com'
             )
         }
         success {
@@ -50,7 +50,7 @@ pipeline {
                     Build Number - ${env.BUILD_NUMBER}
                     Build URL - ${env.BUILD_URL}
                 """,
-                to: 'aapka.gmail@gmail.com'
+                to: 'piyushsinha2895@gmail.com'
             )
         }
     }
