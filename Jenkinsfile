@@ -31,15 +31,27 @@ pipeline {
     }
     
     post {
-        always {
-            // Cleanup workspace
-            cleanWs()
+        failure {
+            emailext (
+                subject: "Jenkins Build Failed: ${currentBuild.fullDisplayName}",
+                body: """
+                    Job Failed - "${env.JOB_NAME}"
+                    Build Number - ${env.BUILD_NUMBER}
+                    Build URL - ${env.BUILD_URL}
+                """,
+                to: 'aapka.gmail@gmail.com'
+            )
         }
         success {
-            echo 'Pipeline successfully completed'
-        }
-        failure {
-            echo 'Pipeline failed'
+            emailext (
+                subject: "Jenkins Build Success: ${currentBuild.fullDisplayName}",
+                body: """
+                    Job Success - "${env.JOB_NAME}"
+                    Build Number - ${env.BUILD_NUMBER}
+                    Build URL - ${env.BUILD_URL}
+                """,
+                to: 'aapka.gmail@gmail.com'
+            )
         }
     }
 }
